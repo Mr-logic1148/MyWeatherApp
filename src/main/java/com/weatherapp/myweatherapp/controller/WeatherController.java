@@ -21,7 +21,7 @@ public class WeatherController {
         return ResponseEntity.ok(ci);
     }
 
-    // Add the new endpoints here
+    // Added the first new endpoints here
     @GetMapping("/compare-daylight/{city1}/{city2}")
     public ResponseEntity<String> compareDaylight(@PathVariable("city1") String city1, @PathVariable("city2") String city2) {
         int daylightHoursCity1 = weatherService.getDaylightHours(city1);
