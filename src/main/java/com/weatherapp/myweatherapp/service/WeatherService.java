@@ -1,18 +1,12 @@
 package com.weatherapp.myweatherapp.service;
 
 import com.weatherapp.myweatherapp.model.CityInfo;
-import com.weatherapp.myweatherapp.repository.VisualcrossingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
-public class WeatherService {
+public interface WeatherService {
 
-  @Autowired
-  VisualcrossingRepository weatherRepo;
+    CityInfo forecastByCity(String city);
 
-  public CityInfo forecastByCity(String city) {
-
-    return weatherRepo.getByCity(city);
-  }
+    // Add these two new methods
+    int getDaylightHours(String city); // Returns daylight hours for a city
+    boolean isRaining(String city);    // Returns true if it's raining in the city
 }
